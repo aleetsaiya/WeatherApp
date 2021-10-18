@@ -1,0 +1,73 @@
+.card {
+    /* Photo by Mahdi Soheili on Unsplash */
+    position: relative;
+    font-size: 18px;
+    /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.25)), url('./image/background.jpg');
+    background-size: cover;
+    background-position-y: 0%; */
+    background: #fff;
+    min-width: 320px;
+    color: rgb(99, 96, 96);
+    min-height: 320px;
+    box-shadow: 1px 12px 31px -15px rgba(0,0,0,0.7);
+    padding: 5px 25px 15px 25px;
+    font-weight: 500;
+  }
+  
+  .card > * {
+    margin: 10px 0;
+  }
+  
+  .card > h3 {
+    font-size: 25px;
+    color: black;
+    margin: 5px 0;
+  }
+  
+  .card .main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .card .main > .temp {
+    font-weight: 300;
+    font-size: 100px;
+  }
+  
+  .card .main > .temp > span {
+    position: relative;
+    top: -70px;
+    left: -10px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  .card .main .sunny {
+    width: 150px;
+    height: 112px;
+  }
+  
+  .card > .weatherElement {
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
+  }
+  
+  .card > .weatherElement > * {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .card .refresh{
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+  }
+  
+  .card .refresh > .refreshIcon {
+    width: 15px;
+  }
