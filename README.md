@@ -1,4 +1,7 @@
 # 天氣App
+
+作品網址: [https://aleetsaiya.github.io/WeatherApp/](https://aleetsaiya.github.io/WeatherApp/)
+
 藉由中央氣象局提供的 API，來獲得當前的天氣概況，使用 React 製作。
 
 參考: [[Day 16 - 即時天氣] 定義並請求組件會使用到的資料 - useState 的更多使用](https://ithelp.ithome.com.tw/articles/10224031)
