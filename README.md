@@ -10,3 +10,10 @@
 
 ## 圖片來源
 Weather Icon Set - Mostly Sunny: [https://dribbble.com/shots/6193524-Weather-Icon-Set-Mostly-Sunny](https://dribbble.com/shots/6193524-Weather-Icon-Set-Mostly-Sunny)
+
+## 心得
+做這次的 App 中發現 **"setState 不一定 會馬上更新 `State` 裡面的值"**，如果要立即使用更新完後的 `State` 裡面的值的話，應該使用 updater 來去進行更新。
+
+[React官方文件-setState()](https://zh-hant.reactjs.org/docs/react-component.html#setstate)
+
+[setState In React: 淺談 React 中 setState 的使用-同步 or 非同步？](https://medium.com/@brianwu291/learn-basic-react-setstate-function-2aec5018a38a)

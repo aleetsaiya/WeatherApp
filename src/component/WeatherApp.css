@@ -1,10 +1,6 @@
 .card {
-    /* Photo by Mahdi Soheili on Unsplash */
     position: relative;
     font-size: 18px;
-    /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.25)), url('./image/background.jpg');
-    background-size: cover;
-    background-position-y: 0%; */
     background: #fff;
     min-width: 320px;
     color: rgb(99, 96, 96);
