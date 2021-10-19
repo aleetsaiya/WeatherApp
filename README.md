@@ -1,6 +1,6 @@
 # 天氣App
 
-作品網址: [https://aleetsaiya.github.io/WeatherApp/](https://aleetsaiya.github.io/WeatherApp/)
+作品網址: [Weather App](https://aleetsaiya.github.io/WeatherApp/)
 
 藉由中央氣象局提供的 API，來獲得當前的天氣概況，使用 React 製作。
 
