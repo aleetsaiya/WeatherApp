@@ -9,7 +9,7 @@
     padding: 5px 25px 15px 25px;
     font-weight: 500;
   }
-  
+
   .card > * {
     margin: 10px 0;
   }
@@ -30,7 +30,7 @@
     font-weight: 300;
     font-size: 100px;
   }
-  
+
   .card .main > .temp > span {
     position: relative;
     top: -70px;
@@ -39,9 +39,8 @@
     font-weight: 700;
   }
   
-  .card .main .sunny {
+  .card .main .weatherIcon {
     width: 150px;
-    height: 112px;
   }
   
   .card > .weatherElement {
@@ -66,4 +65,24 @@
   
   .card .refresh > .refreshIcon {
     width: 15px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .card{
+      min-width: 150px;
+      min-height: 280px;
+    }
+    .card .main > .temp {
+      font-weight: 300;
+      font-size: 70px;
+    }
+
+    .card .main > .temp > span {
+      top: -60px;
+      font-size: 20px;
+    }
+
+    .card .main .weatherIcon {
+      width: 100px;
+    }
   }
