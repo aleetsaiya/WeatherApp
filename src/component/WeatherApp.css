@@ -44,9 +44,7 @@
   }
   
   .card > .weatherElement {
-    position: absolute;
-    bottom: 10px;
-    left: 25px;
+    margin-top: 35px;
   }
   
   .card > .weatherElement > * {
@@ -59,19 +57,22 @@
     right: 15px;
     bottom: 10px;
     border: none;
-    cursor: pointer;
     background-color: inherit;
+    font-size: 12px;
   }
   
   .card .refresh > .refreshIcon {
-    width: 15px;
+    margin-left: 10px;
+    width: 12px;
+    cursor: pointer;
   }
 
   @media only screen and (max-width: 600px) {
     .card{
-      min-width: 150px;
+      min-width: 250px;
       min-height: 280px;
     }
+    
     .card .main > .temp {
       font-weight: 300;
       font-size: 70px;

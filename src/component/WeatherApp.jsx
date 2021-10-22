@@ -14,26 +14,29 @@ const WeatherApp = () => {
         chanceOfRain: "0", //降雨機率
         description: "NaN", // 天氣狀態
         maxT: "", // 最高溫度
-        minT: "" // 最低溫度
+        minT: "", // 最低溫度
+        hour: "00", // 最後觀測時間 ( 小時 )
+        min: "00" // 最後觀測時間 ( 分鐘 )
     });
 
     useEffect(() => {
-        const fetchData = async () => {
-            const [currentWeather, weatherPrediction] = await Promise.all([
-                fetchCurrentWeather(),
-                fetchWeatherPrediction()
-            ]);
-            if (currentWeather.temp === "NaN") {
-                currentWeather.temp = `${weatherPrediction.minT}~${weatherPrediction.maxT}`;
-            }
-            setCurrentWeather({
-                ...currentWeather,
-                ...weatherPrediction
-            });
-        };
-        
         fetchData();
     }, []);
+
+    const fetchData = async () => {
+        console.log('fetch');
+        const [currentWeather, weatherPrediction] = await Promise.all([
+            fetchCurrentWeather(),
+            fetchWeatherPrediction()
+        ]);
+        if (currentWeather.temp === "NaN") {
+            currentWeather.temp = `${weatherPrediction.minT}~${weatherPrediction.maxT}`;
+        }
+        setCurrentWeather({
+            ...currentWeather,
+            ...weatherPrediction
+        });
+    };
 
     const fetchCurrentWeather = () => {
         const url = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=${authorization}`;
@@ -43,12 +46,17 @@ const WeatherApp = () => {
                 const target = respose.data.records.location.find(data => data.locationName === locationName);
                 let temp = parseFloat(target.weatherElement.find(e => e.elementName === "TEMP").elementValue);
                 let humd = parseFloat(target.weatherElement.find(e => e.elementName === "HUMD").elementValue)*100;
+                const time = target.time.obsTime.split(' ')[1];
+                const hour = time.split(':')[0];
+                const min = time.split(':')[1];
                 temp = temp < -50 ? "NaN" : temp;
                 humd = humd < -50 ? "NaN" : humd;
                 return {
                     locationName,
                     temp,
-                    humd
+                    humd,
+                    hour,
+                    min
                 };
             });
     };
@@ -92,11 +100,11 @@ const WeatherApp = () => {
                 <div>相對溼度: {currentWeather.humd}%</div>
                 <div>降雨機率: {currentWeather.chanceOfRain}%</div>
             </div>
-            <div className="refresh" onClick={() => {
-                fetchCurrentWeather();
-                fetchWeatherPrediction();
-            }}>
-                <img src={refresh} alt="refresh" className="refreshIcon"/>
+            <div className="refresh">
+                <span>最後觀測時間: {currentWeather.hour}:{currentWeather.min}</span>
+                <img src={refresh} alt="refresh" className="refreshIcon"  onClick={() => {
+                    fetchData();
+                }}/>
             </div>   
         </div>
     );
