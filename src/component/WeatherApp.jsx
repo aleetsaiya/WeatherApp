@@ -25,9 +25,11 @@ const WeatherApp = () => {
 
     const fetchData = async () => {
         console.log('fetch');
+        const currentWeatherPromise = fetchCurrentWeather();
+        const weatherPredictionPromise = fetchWeatherPrediction();
         const [currentWeather, weatherPrediction] = await Promise.all([
-            fetchCurrentWeather(),
-            fetchWeatherPrediction()
+            currentWeatherPromise,
+            weatherPredictionPromise
         ]);
         if (currentWeather.temp === "NaN") {
             currentWeather.temp = `${weatherPrediction.minT}~${weatherPrediction.maxT}`;
@@ -82,7 +84,8 @@ const WeatherApp = () => {
 
     const isRanny = () => {
         const description = currentWeather.description;
-        if (description.includes('雨') || description.includes('陰')) {
+        const chanceOfRain = currentWeather.chanceOfRain;
+        if (description.includes('雨') || parseInt(chanceOfRain) > 80) {
             return true;
         }
         return false;
@@ -94,7 +97,7 @@ const WeatherApp = () => {
             <div>{currentWeather.description}</div>
             <div className="main">
                 <div className="temp">{currentWeather.temp}<span>°C</span></div>
-                <img src={isRanny ? ranny : sunny} alt="weather icon" className="weatherIcon"/>
+                <img src={isRanny() ? ranny : sunny} alt="weather icon" className="weatherIcon"/>
             </div>
             <div className="weatherElement">
                 <div>相對溼度: {currentWeather.humd}%</div>
