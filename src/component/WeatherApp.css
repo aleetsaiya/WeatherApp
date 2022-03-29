@@ -25,6 +25,20 @@
   );
   z-index: -1;
   border-radius: 15px;
+  background-size: 200% 100%;
+  animation: moveBackground 4s ease infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
 }
 
 .card > * {
