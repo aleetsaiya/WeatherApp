@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import './WeatherApp.css'
-import refresh from '../image/refresh.jpg';
 import sunny from '../image/sunny.gif';
 import ranny from '../image/ranny.gif';
 
@@ -105,9 +104,6 @@ const WeatherApp = () => {
             </div>
             <div className="refresh">
                 <span>最後觀測時間: {currentWeather.hour}:{currentWeather.min}</span>
-                <img src={refresh} alt="refresh" className="refreshIcon"  onClick={() => {
-                    fetchData();
-                }}/>
             </div>   
         </div>
     );
