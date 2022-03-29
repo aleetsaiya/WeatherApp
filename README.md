@@ -22,3 +22,6 @@ Ref: [[Day 16 - 即時天氣] 定義並請求組件會使用到的資料 - useSt
 Ref:  
 + [React官方文件-setState()](https://zh-hant.reactjs.org/docs/react-component.html#setstate)
 + [setState In React: 淺談 React 中 setState 的使用-同步 or 非同步？](https://medium.com/@brianwu291/learn-basic-react-setstate-function-2aec5018a38a)
+
+## Preview
+<img width="670" alt="螢幕擷取畫面 2022-03-29 161202" src="https://user-images.githubusercontent.com/67775387/160565338-296fae20-b455-49ac-8d44-045193d341dc.png">
